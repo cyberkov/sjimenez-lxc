@@ -31,6 +31,18 @@ class lxc::params {
         }
       }
     }
+    'Debian': {
+      case $::lsbdistcodename {
+        'jessie': {
+          $lxc_ruby_bindings_gem_deps = [
+            'build-essential', 'ruby-dev', 'lxc-dev', 'libcgmanager0'
+          ]
+        }
+        default: {
+          fail("Debian ${::lsbdistcodename} is not supported by ${module_name}.")
+        }
+      }
+    }
     default: {
       fail("${::operatingsystem} is not supported by ${module_name} module.")
     }
