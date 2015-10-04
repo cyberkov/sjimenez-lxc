@@ -35,7 +35,7 @@ class lxc::params {
       case $::lsbdistcodename {
         'jessie': {
           $lxc_ruby_bindings_gem_deps = [
-            'build-essential', 'ruby-dev', 'lxc-dev', 'libcgmanager0'
+            'build-essential', 'ruby-dev', 'libcgmanager0'
           ]
         }
         default: {
